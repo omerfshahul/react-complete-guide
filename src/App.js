@@ -73,7 +73,11 @@ class App extends Component {
       font: 'inherit',
       border: '2x solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      }
 
     };
     let persons = null;
@@ -91,6 +95,10 @@ class App extends Component {
        </div>
       );
       style.backgroundColor = 'red';
+      style[':hover'] = {
+        backgroundColor: 'lightred',
+        color: 'black'
+      }
     }
     let classes = [];
 
