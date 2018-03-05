@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person.js';
-import Radium from 'radium';
+import Radium, {StyleRoot} from 'radium';
 
 class App extends Component {
   
@@ -96,7 +96,7 @@ class App extends Component {
       );
       style.backgroundColor = 'red';
       style[':hover'] = {
-        backgroundColor: 'lightred',
+        backgroundColor: 'yellow',
         color: 'black'
       }
     }
@@ -110,15 +110,17 @@ class App extends Component {
     }
   
     return (
-      <div className="App">
-        <h1>Hi! I am the react app! </h1>
-        <p className={classes.join(' ')}>This is really working!</p>
-        <button style={style} onClick={this.togglePersons}>Switch Name</button>
-        {persons}
-       
-      
+      <StyleRoot>
+        <div className="App">
+          <h1>Hi! I am the react app! </h1>
+          <p className={classes.join(' ')}>This is really working!</p>
+          <button style={style} onClick={this.togglePersons}>Switch Name</button>
+          {persons}
         
-      </div>
+        
+          
+        </div>
+      </StyleRoot>
     );
     // return React.createElement('div',{className:'App'},
     //          React.createElement('h1','', 'Does this work now'));
