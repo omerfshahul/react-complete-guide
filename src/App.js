@@ -3,6 +3,7 @@ import styles from './App.css';
 import Person from './components/Person/Person';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
 import Persons from './components/Persons/Persons'
+import Cockpit from './components/cockpit/cockpit'
 
 class App extends Component {
   
@@ -68,16 +69,7 @@ class App extends Component {
     });
   }
   render() {
-    const style = {
-      backgroundColor: 'green',
-      color:'white',
-      font: 'inherit',
-      border: '2x solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      
-
-    };
+  
     let persons = null;
     if (this.state.showPersons){
 
@@ -91,24 +83,19 @@ class App extends Component {
             
        </div>
       );
-      style.backgroundColor = 'red';
+     
      
     }
-    let classes = [];
-
-    if( this.state.persons.length <= 2) {
-      classes.push(styles.red);
-    }
-    if(this.state.persons.length <= 1) {
-      classes.push(styles.bold);
-    }
-  
+    
     return (
      
         <div className={styles.App}>
-          <h1>Hi! I am the react app! </h1>
-          <p className={classes.join(' ')}>This is really working!</p>
-          <button  onClick={this.togglePersons}>Switch Name</button>
+          <Cockpit 
+           appTitle={this.props.title}
+           persons={this.state.persons}
+           clicked={this.togglePersons}
+           showPersons={this.state.showPersons}
+          />
           {persons}
         
         
