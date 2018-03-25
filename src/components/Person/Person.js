@@ -19,9 +19,7 @@ class Person extends Component{
         console.log('[Person.js] Inside componentDidMount');
     }
     
-   componentWillReceiveProps(nextProps){
-       console.log('[Person.js] Inside componentWillReceiveProps', nextProps);
-   }
+   
 
     render() {
         console.log('[Person.js] Inside render()')
