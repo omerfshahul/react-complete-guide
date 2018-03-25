@@ -5,6 +5,7 @@ import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary'
 import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/cockpit/cockpit'
 import Aux from '../hoc/Aux';
+import WithClass from '../hoc/WithClass';
 
 class App extends PureComponent {
   
@@ -119,7 +120,7 @@ componentDidUpdate(){
     
     return (
      
-        <div className={styles.App}>
+        <WithClass classes={styles.App}>
           <button onClick={()=>{this.setState({showPersons:true})}}></button>
           <Cockpit 
            appTitle={this.props.title}
@@ -131,7 +132,7 @@ componentDidUpdate(){
         
         
           
-        </div>
+        </WithClass>
       
     );
     // return React.createElement('div',{className:'App'},
