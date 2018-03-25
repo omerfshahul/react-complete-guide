@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import styles from './App.css';
 import Person from './components/Person/Person';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
 import Persons from './components/Persons/Persons'
 import Cockpit from './components/cockpit/cockpit'
 
-class App extends Component {
+class App extends PureComponent {
   
   constructor(props){
     super(props);
@@ -35,10 +35,11 @@ componentDidMount(){
 componentWillReceiveProps(nextProps){
   console.log('[App.js] Inside componentWillReceiveProps', nextProps);
 }
-shouldComponentUpdate(nextProps, nextState){
-  console.log("[App.js] Inside shouldComponentUpdate", nextProps, nextState);
-  return true;
-}
+// shouldComponentUpdate(nextProps, nextState){
+//   console.log("[App.js] Inside shouldComponentUpdate", nextProps, nextState);
+//   return nextState.persons!== this.state.persons ||
+//          nextState.showPersons !== this.state.showPersons;
+// }
 componentWillUpdate(nextProps, nextState){
   console.log("[App.js] Inside componentWillUpdate", nextProps, nextState);
 }
