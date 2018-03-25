@@ -7,17 +7,33 @@ import Cockpit from './components/cockpit/cockpit'
 
 class App extends Component {
   
+  constructor(props){
+    super(props);
+    console.log('[App.js] Inside Constructor', props);
+    this.state = {
+      persons: [
+        {id: '1', name: 'Max', age:'26'},
+        {id: '2', name: 'Manu', age:'28'},
+        {id: '3', name: 'Stephanie', age:'30'}
+      ],
+      showPersons: true
+  
+    };
+
+
+}
+
+componentWillMount(){
+
+    console.log('[App.js] Inside componentWillMount');
+}
+
+componentDidMount(){
+    console.log('[App.js] Inside componentDidMount');
+}
 
  
-  state = {
-    persons: [
-      {id: '1', name: 'Max', age:'26'},
-      {id: '2', name: 'Manu', age:'28'},
-      {id: '3', name: 'Stephanie', age:'30'}
-    ],
-    showPersons: true
-
-  };
+  
 
  
   deletePersonHandler = (index) => {
@@ -69,7 +85,7 @@ class App extends Component {
     });
   }
   render() {
-  
+    console.log('[App.js] Inside render()');
     let persons = null;
     if (this.state.showPersons){
 

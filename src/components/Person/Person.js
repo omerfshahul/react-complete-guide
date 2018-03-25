@@ -2,7 +2,29 @@ import React, {Component} from 'react';
 import styles from './Person.css';
 
 class Person extends Component{
+
+    constructor(props){
+        super(props);
+        console.log('[Person.js] Inside Constructor', props);
+        
+    
+    }
+    
+    componentWillMount(){
+    
+        console.log('[Person.js] Inside componentWillMount');
+    }
+    
+    componentDidMount(){
+        console.log('[Person.js] Inside componentDidMount');
+    }
+    
+   componentWillReceiveProps(nextProps){
+       console.log('[Person.js] Inside componentWillReceiveProps', nextProps);
+   }
+
     render() {
+        console.log('[Person.js] Inside render()')
         return( 
         <div className={styles.Person} >
 
