@@ -32,8 +32,20 @@ componentDidMount(){
     console.log('[App.js] Inside componentDidMount');
 }
 
- 
-  
+componentWillReceiveProps(nextProps){
+  console.log('[App.js] Inside componentWillReceiveProps', nextProps);
+}
+shouldComponentUpdate(nextProps, nextState){
+  console.log("[App.js] Inside shouldComponentUpdate", nextProps, nextState);
+  return true;
+}
+componentWillUpdate(nextProps, nextState){
+  console.log("[App.js] Inside componentWillUpdate", nextProps, nextState);
+}
+componentDidUpdate(){
+  console.log("[App.js] Inside componentDidUpdate");
+} 
+
 
  
   deletePersonHandler = (index) => {
@@ -106,6 +118,7 @@ componentDidMount(){
     return (
      
         <div className={styles.App}>
+          <button onClick={()=>{this.setState({showPersons:true})}}></button>
           <Cockpit 
            appTitle={this.props.title}
            persons={this.state.persons}
