@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import styles from './App.css';
 import Person from '../components/Person/Person';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary'
 import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/cockpit/cockpit'
-import Aux from '../hoc/aux';
+import Aux from '../hoc/Aux';
 
 class App extends PureComponent {
   
@@ -104,14 +104,14 @@ componentDidUpdate(){
     if (this.state.showPersons){
 
       persons = (
-        <Aux>
+        <Fragment>
           <Persons 
              persons={this.state.persons}
              clicked={this.deletePersonHandler}
              changed={this.nameChangeHandler}
           />
             
-       </Aux>
+       </Fragment>
       );
      
      
