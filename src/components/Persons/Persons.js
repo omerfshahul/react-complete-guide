@@ -25,7 +25,10 @@ componentWillReceiveProps(nextProps){
 shouldComponentUpdate(nextProps, nextState){
   console.log("[Persons.js] Inside shouldComponentUpdate", nextProps, nextState);
   //return nextProps.persons !== this.props.persons;
-  return true;
+  //return true;
+  return nextProps.persons !== this.props.persons ||
+         nextProps.changed !== this.props.changed ||
+         nextProps.clicked !== this.props.clicked;
 }
 componentWillUpdate(nextProps, nextState){
   console.log("[Persons.js] Inside componentWillUpdate", nextProps, nextState);
